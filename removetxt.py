@@ -32,22 +32,22 @@ def process_images_in_folder(input_folder, output_folder):
         os.makedirs(output_folder)
      
 
-    index=35
+    index=1
     # List all files in the input folder
-    for filename in os.listdir(input_folder):
-        if filename.endswith(('.jpg', '.jpeg', '.png')):  # Filter images
+    # for filename in os.listdir(input_folder):
+    #     if filename.endswith(('.jpg', '.jpeg', '.png')):  # Filter images
             # Construct input and output paths
             
-            input_image_path = os.path.join(input_folder, filename)
-            output_image_path = os.path.join(output_folder, f"{index}.png")
+    input_image_path = os.path.join(input_folder, '191503-img-00002-00033.png')
+    output_image_path = os.path.join(output_folder, f"{index}testIMG.png")
 
             # Process the image
-            output_image = detect_and_make_text_black(input_image_path)
+    output_image = detect_and_make_text_black(input_image_path)
 
             # Save the modified image
-            cv2.imwrite(output_image_path, output_image)
-            index+=1
+    cv2.imwrite(output_image_path, output_image)
+    index+=1
 # Example usage
-input_folder = 'C:\\Users\\hp\\Downloads\\final extracted images\\final extracted images\\191503\\Patient-SRINIVAS\\Study-2158771-CT-CT- BRAIN PLAIN[20200509]\\Series-002'
-output_folder = 'D:\\capstone codes\\NONTBI'
+input_folder = 'C:/Users/hp/Downloads/final extracted images/final extracted images/191503/Patient-SRINIVAS/Study-2158771-CT-CT- BRAIN PLAIN[20200509]/Series-002'
+output_folder = 'D:/capstone codes/testimages'
 process_images_in_folder(input_folder, output_folder)
